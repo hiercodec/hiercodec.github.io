@@ -1,1 +1,1 @@
-# This is the demo page for FastSAG
+# This is the demo page for HierCodec
