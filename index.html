@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/normalize.css">
 
-	<title>FastSAG: Towards Fast Non-Autoregressive Singing Accompaniment Generation - AI Music Research</title>
+	<title>FastSAG: HierCodec: Hierarchical Codec for Long Music Generation in Audio Domain - AI Music Research</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
 </head>
@@ -54,9 +54,10 @@
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded"> 
 
   <div class="centered-link"> <a href="">Paper</a> | <a href="">Code</a> </div>
-
+  <!--
   <p align="center"><sup>1</sup>Jianyi Chen, <sup>1</sup>Wei Xue, <sup>2</sup>Xu Tan, <sup>1</sup>Zhen Ye, <sup>1</sup>Qifeng Liu, <sup>1</sup>Yike Guo</p>
   <p align="center"><sup>1</sup>The Hong Kong University of Science and Technology, <sup>2</sup>Microsoft Research Asia</p>
+  -->
 
   <h2 id="abstract" style="text-align:center;"><font color="000000">Abstract</font></h2>
   <style>
@@ -66,7 +67,7 @@
   </style>
    
 
-  <p style="text-align: justify;"><font color="000000"> Singing Accompaniment Generation (SAG), which generates instrumental music to accompany input vocals, is crucial to developing human-AI symbiotic art creation systems. The state-of-the-art method, SingSong, utilizes a multi-stage autoregressive (AR) model for SAG, however, this method is extremely slow as it generates semantic and acoustic tokens recursively, and this makes it impossible for real-time applications. In this paper, we aim to develop a Fast SAG method that can create high-quality and coherent accompaniments. A non-AR diffusion-based framework is developed, which by carefully designing the conditions inferred from the vocal signals, generates the Mel spectrogram of the target accompaniment directly. With diffusion and Mel spectrogram modeling, the proposed method significantly simplifies the AR token-based SingSong framework, and largely accelerates the generation. We also design semantic projection, prior projection blocks as well as a set of loss functions, to ensure the generated accompaniment has semantic and rhythm coherence with the vocal signal. By intensive experimental studies, we demonstrate that the proposed method can generate better samples than SingSong, and accelerate the generation by at least 30 times. </font></p>
+  <p style="text-align: justify;"><font color="000000"> Generating well-structured long music compositions, spanning several minutes, remains a challenge due to inefficient representation and the lack of structured representation. In this paper, we propose HierCodec, a hierarchical discrete representation of audio, for long audio-domain music generation. Specifically, we employ residual vector quantization on different levels of features to obtain the hierarchical discrete representation. The highest level of features has the largest hop size, resulting in the most compact token sequence. The quantized higher-level representation is up-sampled and combined with lower-level features to apply residual vector quantization and obtain lower-level discrete representations. Furthermore, we design a hierarchical training strategy to ensure that the details are gradually added with more levels of tokens. By performing hierarchical tokenization, the overall token sequence length is significantly reduced, facilitating long-context modeling in music and enabling the generation of well-structured compositions. The experimental results demonstrate that our proposed HierCodec achieves competitive performance in terms of reconstruction quality and token per second (TPS). By enabling ultra-long music modeling at the lowest level, the proposed approach facilitates training a language model that can generate well-structured long-form music for up to 3 minutes, whose quality is further demonstrated by subjective and objective evaluations. </font></p>
   <!-- <br></br> -->
   <figure>
   <p align="center"><img src="Overview.png" width="80%"  class="center"/></p>
